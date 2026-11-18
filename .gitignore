@@ -1,0 +1,4 @@
+.playwright-mcp/
+.impeccable/hook.cache.json
+.impeccable/config.local.json
+.DS_Store

@@ -1,0 +1,412 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-18T20:14:27+00:00",
+  "title": "Design System: TP Studio Labs",
+  "extensions": {
+    "colorMeta": {
+      "violet-ink": {
+        "role": "primary",
+        "displayName": "Violeta de Ação",
+        "canonical": "oklch(54.1% 0.238 284)",
+        "tonalRamp": [
+          "#0d0039",
+          "#230267",
+          "#3c1e9a",
+          "#5839d0",
+          "#745cfb",
+          "#9388ff",
+          "#b9b5ff",
+          "#e5e4ff"
+        ]
+      },
+      "violet-hover": {
+        "role": "primary",
+        "displayName": "Violeta Profundo",
+        "canonical": "oklch(49.9% 0.233 283)",
+        "tonalRamp": [
+          "#0c0038",
+          "#210567",
+          "#3a2199",
+          "#553cce",
+          "#715ffa",
+          "#908aff",
+          "#b6b6ff",
+          "#e2e5ff"
+        ]
+      },
+      "violet": {
+        "role": "primary",
+        "displayName": "Violeta Luz",
+        "canonical": "oklch(59.9% 0.230 286)",
+        "tonalRamp": [
+          "#0e0037",
+          "#250464",
+          "#3f2096",
+          "#5c3acb",
+          "#795cf6",
+          "#9888ff",
+          "#bdb4ff",
+          "#e8e4ff"
+        ]
+      },
+      "lavender": {
+        "role": "secondary",
+        "displayName": "Lavanda",
+        "canonical": "oklch(79.9% 0.107 287)",
+        "tonalRamp": [
+          "#0b0620",
+          "#231d42",
+          "#3e3869",
+          "#5b5491",
+          "#7a73b6",
+          "#9b96d2",
+          "#c1bef0",
+          "#eceaff"
+        ]
+      },
+      "on-violet": {
+        "role": "neutral",
+        "displayName": "Branco sobre Violeta"
+      },
+      "night-0": {
+        "role": "neutral",
+        "displayName": "Noite Profunda",
+        "canonical": "oklch(14.3% 0.033 278)",
+        "tonalRamp": [
+          "#090b12",
+          "#21232e",
+          "#3c3f4d",
+          "#595c6f",
+          "#797c90",
+          "#9a9daf",
+          "#c0c3d2",
+          "#eceefa"
+        ]
+      },
+      "night-1": {
+        "role": "neutral",
+        "displayName": "Azul-Noite",
+        "canonical": "oklch(16.8% 0.038 277)",
+        "tonalRamp": [
+          "#090a13",
+          "#212330",
+          "#3c3f4f",
+          "#585c71",
+          "#777c93",
+          "#999db2",
+          "#c0c3d4",
+          "#ebeefb"
+        ]
+      },
+      "night-2": {
+        "role": "neutral",
+        "displayName": "Índigo Noturno",
+        "canonical": "oklch(21.6% 0.072 276)",
+        "tonalRamp": [
+          "#08091a",
+          "#1e223a",
+          "#383d5d",
+          "#535a83",
+          "#727aa6",
+          "#949cc3",
+          "#bbc2e3",
+          "#e8edff"
+        ]
+      },
+      "night-3": {
+        "role": "neutral",
+        "displayName": "Índigo Fundo",
+        "canonical": "oklch(25.7% 0.082 276)",
+        "tonalRamp": [
+          "#07091c",
+          "#1d213d",
+          "#373c61",
+          "#525a88",
+          "#7079ac",
+          "#939bc8",
+          "#bac2e8",
+          "#e7edff"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Branco-Lavanda",
+        "canonical": "oklch(94.9% 0.012 291)",
+        "tonalRamp": [
+          "#0b0a10",
+          "#24232a",
+          "#403f46",
+          "#5d5c64",
+          "#7d7c84",
+          "#9e9da6",
+          "#c4c3cb",
+          "#eeedf6"
+        ]
+      },
+      "text-2": {
+        "role": "neutral",
+        "displayName": "Lavanda Acinzentada",
+        "canonical": "oklch(77.6% 0.048 288)",
+        "tonalRamp": [
+          "#0b0915",
+          "#232232",
+          "#3e3d53",
+          "#5c5a75",
+          "#7b7997",
+          "#9d9bb6",
+          "#c2c1d8",
+          "#edecfe"
+        ]
+      },
+      "text-3": {
+        "role": "neutral",
+        "displayName": "Lavanda Apagada",
+        "canonical": "oklch(65.3% 0.068 287)",
+        "tonalRamp": [
+          "#0a0918",
+          "#232138",
+          "#3e3b5a",
+          "#5b587f",
+          "#7a78a2",
+          "#9c9ac0",
+          "#c2c0e0",
+          "#ececff"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Fio"
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Fio Forte"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Título do hero e título da história."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Títulos de seção e da caixa de CTA (esta em 800)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Títulos dos tiles de cenário."
+      },
+      "title-sm": {
+        "displayName": "Title pequeno",
+        "purpose": "Títulos da grade de serviços."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Subtítulo do hero."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto corrido."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Rótulo de botões."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Rótulo de dado em caixa-alta dentro da interface ilustrada; nunca acima de título."
+      }
+    },
+    "shadows": [
+      {
+        "name": "tecla",
+        "value": "0 6px 16px -6px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.18)",
+        "purpose": "Botão primário em repouso."
+      },
+      {
+        "name": "tecla-hover",
+        "value": "0 10px 22px -8px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.22)",
+        "purpose": "Botão primário no hover."
+      },
+      {
+        "name": "objeto",
+        "value": "0 40px 80px -24px rgba(0,0,0,0.75), inset 0 0 0 1px rgba(255,255,255,0.08)",
+        "purpose": "Só o celular do hero."
+      },
+      {
+        "name": "vidro-nav",
+        "value": "background: rgba(11,13,31,0.72); backdrop-filter: saturate(140%) blur(14px)",
+        "purpose": "Barra de navegação fixa."
+      },
+      {
+        "name": "luz-violeta",
+        "value": "radial-gradient(closest-side, rgba(124,92,255,0.34), rgba(124,92,255,0.08) 55%, transparent 75%)",
+        "purpose": "Brilho de fundo atrás do celular; variações a 0,28–0,32 no tile principal e na CTA. Luz de cena, nunca sombra."
+      },
+      {
+        "name": "foco",
+        "value": "outline: 2px solid #b9b3ff; outline-offset: 3px",
+        "purpose": "Anel de foco global."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Curva única do sistema."
+      },
+      {
+        "name": "state",
+        "value": "0.2s",
+        "purpose": "Hover, cor, borda, pressão (scale 0.97)."
+      },
+      {
+        "name": "data-state",
+        "value": "0.5s",
+        "purpose": "Mudança de estado na interface ilustrada."
+      },
+      {
+        "name": "reveal",
+        "value": "0.8s, translateY(24px), stagger 60ms",
+        "purpose": "Revelação de seção ao rolar."
+      },
+      {
+        "name": "hero-rise",
+        "value": "0.9s, translateY(18px) + blur(6px), atrasos de 80ms; celular 1.1s",
+        "purpose": "Entrada única do hero."
+      },
+      {
+        "name": "setlist-tick",
+        "value": "2600ms",
+        "purpose": "Avanço do momento ativo da ordem do culto."
+      },
+      {
+        "name": "pad-pulse",
+        "value": "2.4s ease-in-out infinite",
+        "purpose": "Pulso das barras do pad."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "560px"
+      },
+      {
+        "name": "md",
+        "value": "720px"
+      },
+      {
+        "name": "nav",
+        "value": "860px"
+      },
+      {
+        "name": "lg",
+        "value": "960px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão primário",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ação principal (chamar no WhatsApp); único uso de violeta sólido.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z\"/></svg><span>Chamar no WhatsApp</span></a>",
+      "css": ":host{--violet-ink:#6847f0;--violet-hover:#5a3be0;--violet:#7c5cff;--lavender:#b9b3ff;--night-0:#070817;--night-1:#0b0d1f;--night-2:#12143a;--line:rgba(185,179,255,.14);--line-strong:rgba(185,179,255,.28);--text:#eeedf6;--text-2:#b4b2d4;--text-3:#8d8ab8;--ease-out:cubic-bezier(.16,1,.3,1)} .ds-btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;border:1px solid transparent;font:600 1rem/1 Inter,system-ui,sans-serif;text-decoration:none;white-space:nowrap;cursor:pointer;transition:background-color .2s,border-color .2s,transform .2s var(--ease-out),box-shadow .2s} .ds-btn:active{transform:scale(.97)} .ds-btn:focus-visible{outline:2px solid var(--lavender);outline-offset:3px} .ds-btn-primary{background:var(--violet-ink);color:#fff;box-shadow:0 6px 16px -6px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.18)} .ds-btn-primary:hover{background:var(--violet-hover);box-shadow:0 10px 22px -8px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.22)}"
+    },
+    {
+      "name": "Botão fantasma",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Ação secundária (seguir no Instagram).",
+      "html": "<a class=\"ds-btn ds-btn-ghost\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" aria-hidden=\"true\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"4\"/></g></svg><span>Seguir no Instagram</span></a>",
+      "css": ":host{--violet-ink:#6847f0;--violet-hover:#5a3be0;--violet:#7c5cff;--lavender:#b9b3ff;--night-0:#070817;--night-1:#0b0d1f;--night-2:#12143a;--line:rgba(185,179,255,.14);--line-strong:rgba(185,179,255,.28);--text:#eeedf6;--text-2:#b4b2d4;--text-3:#8d8ab8;--ease-out:cubic-bezier(.16,1,.3,1)} .ds-btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;border:1px solid transparent;font:600 1rem/1 Inter,system-ui,sans-serif;text-decoration:none;white-space:nowrap;cursor:pointer;transition:background-color .2s,border-color .2s,transform .2s var(--ease-out),box-shadow .2s} .ds-btn:active{transform:scale(.97)} .ds-btn:focus-visible{outline:2px solid var(--lavender);outline-offset:3px} .ds-btn-ghost{border-color:var(--line-strong);color:var(--text);background:rgba(255,255,255,.02)} .ds-btn-ghost:hover{border-color:var(--lavender);background:rgba(185,179,255,.06)}"
+    },
+    {
+      "name": "Navegação",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Barra fixa em vidro azul-noite com monograma, âncoras e botão pequeno de WhatsApp.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\"><span class=\"ds-mono\">TP</span><span>TP Studio <small>Labs</small></span></a><nav class=\"ds-links\"><a href=\"#\">Cenários</a><a href=\"#\">Nossa história</a><a href=\"#\">O que fazemos</a></nav><a class=\"ds-btn ds-btn-primary ds-btn-sm\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z\"/></svg><span>WhatsApp</span></a></header>",
+      "css": ":host{--violet-ink:#6847f0;--violet-hover:#5a3be0;--violet:#7c5cff;--lavender:#b9b3ff;--night-0:#070817;--night-1:#0b0d1f;--night-2:#12143a;--line:rgba(185,179,255,.14);--line-strong:rgba(185,179,255,.28);--text:#eeedf6;--text-2:#b4b2d4;--text-3:#8d8ab8;--ease-out:cubic-bezier(.16,1,.3,1)} .ds-btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;border:1px solid transparent;font:600 1rem/1 Inter,system-ui,sans-serif;text-decoration:none;white-space:nowrap;cursor:pointer;transition:background-color .2s,border-color .2s,transform .2s var(--ease-out),box-shadow .2s} .ds-btn:active{transform:scale(.97)} .ds-btn:focus-visible{outline:2px solid var(--lavender);outline-offset:3px} .ds-nav{display:flex;align-items:center;gap:32px;height:68px;padding:0 24px;background:rgba(11,13,31,.72);backdrop-filter:saturate(140%) blur(14px);border-bottom:1px solid var(--line);color:var(--text)} .ds-brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font:700 1.0625rem/1 Poppins,system-ui,sans-serif} .ds-mono{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--night-2);border:1px solid var(--line-strong);font-size:.75rem;color:var(--lavender)} .ds-brand small{font:500 .6875rem/1 Inter,system-ui,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--text-3);margin-left:4px;padding-left:8px;border-left:1px solid var(--line-strong)} .ds-links{display:flex;gap:28px;margin-left:auto;font:400 .9375rem Inter,system-ui,sans-serif} .ds-links a{color:var(--text-2);text-decoration:none;transition:color .2s} .ds-links a:hover{color:var(--text)} .ds-btn-primary{background:var(--violet-ink);color:#fff} .ds-btn-primary:hover{background:var(--violet-hover)} .ds-btn-sm{min-height:40px;padding:0 16px;font-size:.9375rem}"
+    },
+    {
+      "name": "Tile de cenário",
+      "kind": "card",
+      "refersTo": "tile",
+      "description": "Superfície tonal de 28px com ícone de linha lavanda inline ao lado do título.",
+      "html": "<article class=\"ds-tile\"><div class=\"ds-tile-head\"><svg viewBox=\"0 0 24 24\" width=\"30\" height=\"30\" aria-hidden=\"true\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 2v4M10 4h4M6 21V11l6-5 6 5v10\"/><path d=\"M3 21h18M10 21v-4a2 2 0 0 1 4 0v4\"/></g></svg><h3>No altar</h3></div><p>Ensaio, tom, pad, luz e culto em sintonia.</p></article>",
+      "css": ":host{--violet-ink:#6847f0;--violet-hover:#5a3be0;--violet:#7c5cff;--lavender:#b9b3ff;--night-0:#070817;--night-1:#0b0d1f;--night-2:#12143a;--line:rgba(185,179,255,.14);--line-strong:rgba(185,179,255,.28);--text:#eeedf6;--text-2:#b4b2d4;--text-3:#8d8ab8;--ease-out:cubic-bezier(.16,1,.3,1)} .ds-tile{padding:36px;border-radius:28px;background:linear-gradient(180deg,var(--night-2),rgba(18,20,58,.6));border:1px solid var(--line);display:flex;flex-direction:column;gap:12px;color:var(--text)} .ds-tile-head{display:flex;align-items:center;gap:14px} .ds-tile-head svg{color:var(--lavender);flex:none} .ds-tile h3{margin:0;font:700 1.75rem/1.1 Poppins,system-ui,sans-serif;letter-spacing:-.02em} .ds-tile p{margin:0;color:var(--text-2);font:400 1.0625rem/1.6 Inter,system-ui,sans-serif;max-width:26em}"
+    },
+    {
+      "name": "Chips de cifra",
+      "kind": "chip",
+      "refersTo": "chip-chord",
+      "description": "Acordes em lavanda sobre tinta violeta translúcida.",
+      "html": "<div class=\"ds-cifra\"><span>G</span><span>D/F#</span><span>Em</span><span>C</span></div>",
+      "css": ":host{--violet-ink:#6847f0;--violet-hover:#5a3be0;--violet:#7c5cff;--lavender:#b9b3ff;--night-0:#070817;--night-1:#0b0d1f;--night-2:#12143a;--line:rgba(185,179,255,.14);--line-strong:rgba(185,179,255,.28);--text:#eeedf6;--text-2:#b4b2d4;--text-3:#8d8ab8;--ease-out:cubic-bezier(.16,1,.3,1)} .ds-cifra{display:flex;gap:10px;flex-wrap:wrap} .ds-cifra span{min-width:52px;text-align:center;padding:10px 12px;border-radius:10px;font:600 1rem/1 Inter,system-ui,sans-serif;color:var(--lavender);background:rgba(124,92,255,.1);border:1px solid rgba(124,92,255,.3)}"
+    },
+    {
+      "name": "Painel de sincronia",
+      "kind": "custom",
+      "refersTo": "tile",
+      "description": "Grade de valores da interface ilustrada: rótulo de dado em caixa-alta, valor em Poppins lavanda tabular.",
+      "html": "<dl class=\"ds-sync\"><div><dt>Momento</dt><dd>Louvor</dd></div><div><dt>Tom</dt><dd>D</dd></div><div><dt>Pad</dt><dd>D</dd></div><div><dt>Luz</dt><dd>Quente</dd></div></dl>",
+      "css": ":host{--violet-ink:#6847f0;--violet-hover:#5a3be0;--violet:#7c5cff;--lavender:#b9b3ff;--night-0:#070817;--night-1:#0b0d1f;--night-2:#12143a;--line:rgba(185,179,255,.14);--line-strong:rgba(185,179,255,.28);--text:#eeedf6;--text-2:#b4b2d4;--text-3:#8d8ab8;--ease-out:cubic-bezier(.16,1,.3,1)} .ds-sync{margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border-radius:16px;overflow:hidden;background:var(--line);border:1px solid var(--line)} .ds-sync div{background:rgba(7,8,23,.92);padding:16px 16px 18px} .ds-sync dt{font:400 .75rem Inter,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3)} .ds-sync dd{margin:6px 0 0;font:600 1.25rem/1.2 Poppins,system-ui,sans-serif;color:var(--lavender);font-variant-numeric:tabular-nums}"
+    }
+  ],
+  "narrative": {
+    "northStar": "O Estúdio à Noite",
+    "overview": "O padrão da categoria escolhido de propósito: uma landing escura de estúdio de apps, com o celular como prova, executada com o rigor de Linear e Raycast. Nada de ironia nem de excentricidade escondida; a convenção vira compromisso, e a qualidade está na execução: bordas de 1px translúcidas, tipografia geométrica pesada, cantos generosos e um único brilho violeta que acende a cena atrás do produto.\n\nO mundo é azul-noite (do quase preto #070817 ao índigo #12143a), com o violeta reservado para o que se clica e a lavanda para o que se destaca. A densidade é baixa e respirada: seções altas, títulos grandes, parágrafos curtos. As telas de app são ilustrativas e sempre rotuladas como tal; a interface desenhada no celular e no tile \"No altar\" é a peça de assinatura e conversa com o resto da página (o momento ativo avança e o painel acompanha).\n\nO movimento é contido: uma entrada única do hero em sequência curta, revelação discreta por seção e o pulso do pad. Tudo desliga com `prefers-reduced-motion`, e o conteúdo é visível sem JavaScript.",
+    "keyCharacteristics": [
+      "Fundo azul-noite em camadas tonais, nunca preto puro.",
+      "Violeta sólido só em ações; lavanda nos destaques de texto e ícones.",
+      "Poppins 700–800 com tracking negativo nos títulos, Inter no corpo.",
+      "Bordas de 1px em lavanda translúcida separando superfícies e seções.",
+      "Cantos grandes (16–28px) em superfícies, pílula em botões.",
+      "Interface de app ilustrativa como prova visual, sempre rotulada."
+    ],
+    "rules": [
+      {
+        "name": "The Violeta Só Clica Rule",
+        "body": "Violeta sólido (#6847f0) é exclusivo de ações. Destaque decorativo é lavanda. Se não é clicável e precisa de cor, é lavanda ou violeta translúcido como tinta de luz, nunca um bloco violeta cheio. A única exceção é o estado ativo dentro da interface ilustrada (a tecla de tom da linha ativa), que representa a seleção do próprio app.",
+        "section": "colors"
+      },
+      {
+        "name": "The Noite em Camadas Rule",
+        "body": "Profundidade vem do degrau tonal da noite (night-0 → night-3) e de fios de 1px, não de cores novas. Não existe cinza neutro; todo neutro puxa para o azul-lavanda.",
+        "section": "colors"
+      },
+      {
+        "name": "The Título Pesado Rule",
+        "body": "Todo h1/h2/h3 é Poppins com tracking negativo proporcional ao tamanho (-0,035em no display, -0,01em no menor) e `text-wrap: balance`. Corpo nunca usa Poppins.",
+        "section": "typography"
+      },
+      {
+        "name": "The Rótulo É Dado Rule",
+        "body": "Caixa-alta espaçada rotula um valor dentro da interface ilustrada (ou o \"LABS\" do logotipo). Nunca aparece como etiqueta acima de um título de seção.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sombra Sem Cor Rule",
+        "body": "Sombras são sempre pretas e neutras. Cor violeta entra como luz de fundo (gradiente radial atrás do objeto), nunca como sombra projetada ou brilho em volta de botão.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** usar violeta sólido (#6847f0, hover #5a3be0) só em botões e links de ação.",
+      "**Do** usar lavanda (#b9b3ff) para destacar uma palavra do título, ícones e valores.",
+      "**Do** separar superfícies e seções com fios de 1px em lavanda a 14% (28% para ênfase).",
+      "**Do** colocar ícones de linha inline, à esquerda do título, sem moldura nem fundo.",
+      "**Do** rotular toda tela de app como ilustrativa.",
+      "**Do** manter o conteúdo visível sem JavaScript e desligar todo movimento com `prefers-reduced-motion`."
+    ],
+    "donts": [
+      "**Don't** pintar elementos decorativos com violeta sólido; decoração é lavanda ou luz violeta translúcida.",
+      "**Don't** usar sombra colorida ou brilho violeta em volta de botões e cartões.",
+      "**Don't** colocar ícones dentro de quadrados ou círculos coloridos (ícone em tile).",
+      "**Don't** pôr etiqueta em caixa-alta (kicker/eyebrow) acima de títulos de seção.",
+      "**Don't** usar preto puro ou cinza neutro; os neutros são azul-noite e lavanda.",
+      "**Don't** usar Poppins em texto corrido nem Inter em títulos."
+    ]
+  }
+}

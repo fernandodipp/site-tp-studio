@@ -1,0 +1,26 @@
+{
+  "fonte": "https://www.instagram.com/tpstudiolabs/",
+  "coletado_em": "2026-11-18",
+  "usuario": "tpstudiolabs",
+  "nome": "TP STUDIO LABS",
+  "seguidores": 124,
+  "seguindo": 227,
+  "posts_total": 6,
+  "bio": "🚀 Tecnologia para ir além\n⛪ Igrejas • Eventos • Transmissões\n💻 Apps, sistemas e automação\n🎵 Do ensaio ao culto, do estúdio ao palco!\nCEO:@thiagopfb",
+  "foto_perfil": "img/perfil.jpg",
+  "destaques": ["TP STUDIO", "APPS", "IGREJA", "ESTÚDIO", "MÚSICO", "TUTORIAIS", "NOVIDADES", "CLIENTES", "CONTATO"],
+  "posts": [
+    {"id": "De4JLEqRReh", "data": "2026-10-24", "curtidas": 19, "imagem": "img/De4JLEqRReh.jpg",
+     "legenda": "Aprendizados, aperfeiçoamentos e direcionamento com propósito, só tenho a agradecer ao Pastor, mestre, palestrante, @franzfigueroa"},
+    {"id": "DeQyDjqIQsF", "data": "2026-10-08", "curtidas": 9, "imagem": "img/DeQyDjqIQsF.jpg",
+     "legenda": "A TP Studio Labs é uma família de apps feita para facilitar a sua vida: no estúdio, no altar, no palco, controlando seu evento de ponta a ponta.\n\nNos próximos posts você vai conhecer cada um. Ative as notificações 🔔"},
+    {"id": "DeQ0HKlI-WA", "data": "2026-10-08", "curtidas": 4, "imagem": "img/DeQ0HKlI-WA.jpg",
+     "legenda": "Nascemos entre o estúdio e o altar.\n> A TP Studio Labs nasceu dentro de um estúdio de música e de um ministério de louvor. Cada app resolve um problema que a gente viveu na prática: no ensaio, na gravação, no culto.\n> E você, qual problema gostaria de ver resolvido? 👇"},
+    {"id": "DeQ0P69oNor", "data": "2026-10-08", "curtidas": 3, "imagem": "img/DeQ0P69oNor.jpg",
+     "legenda": "Do ensaio ao culto, do estúdio ao palco.\nApps que resolvem a sua vida!"},
+    {"id": "DeQ1m3Do3yU", "data": "2026-10-08", "curtidas": 3, "imagem": "img/DeQ1m3Do3yU.jpg",
+     "legenda": "Tecnologia para quem vive a música.\n> Para quem grava, mixa e publica. Para quem ensaia, canta e serve no culto. Para quem toca e quer evoluir.\n> Criamos ferramentas que tiram o peso técnico do caminho para você focar no que importa: a música."},
+    {"id": "DeQ0fdqI0_l", "data": "2026-10-08", "curtidas": 7, "imagem": "img/DeQ0fdqI0_l.jpg",
+     "legenda": "Vem aí: o lançamento da família TP STUDIO LABS. 👀\n> Siga @tpstudiolabs e ative as notificações para ver cada lançamento primeiro.\n> Marque aquele amigo que precisa conhecer👇"}
+  ]
+}
