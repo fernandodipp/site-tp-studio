@@ -27,7 +27,7 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 
   --gutter: clamp(16px, 4vw, 40px);
-  --section: clamp(88px, 12vw, 160px);
+  --section: clamp(64px, 7.5vw, 104px);
   color-scheme: dark;
 }
 
@@ -189,7 +189,7 @@ html { scrollbar-color: var(--night-3) var(--night-0); }
 /* Sections */
 .section { padding-block: var(--section); border-top: 1px solid var(--line); }
 .section__head.section__head--solo { grid-template-columns: 1fr; margin-bottom: clamp(28px, 2.6vw, 40px); }
-.section__head { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 64px; align-items: end; margin-bottom: clamp(40px, 6vw, 72px); }
+.section__head { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 64px; align-items: end; margin-bottom: clamp(32px, 4vw, 56px); }
 .section__head h2, .launch__head h3, .eng h2, .music h2 { font-weight: 700; font-size: clamp(2rem, 4.2vw, 3.25rem); line-height: 1.08; letter-spacing: -0.03em; }
 .section__head p, .launch__head p { color: var(--text-2); font-size: 1.125rem; max-width: 32em; }
 
@@ -255,7 +255,7 @@ html { scrollbar-color: var(--night-3) var(--night-0); }
 .services p { margin-top: 8px; color: var(--text-2); }
 
 /* Launch */
-.launch__head { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: clamp(40px, 5vw, 56px); }
+.launch__head { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: clamp(28px, 3vw, 40px); }
 .launch__head p { margin-top: 16px; }
 .feed { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .feed a { display: block; border-radius: var(--r-md); overflow: hidden; border: 1px solid var(--line); background: var(--night-2); }
@@ -266,7 +266,7 @@ html { scrollbar-color: var(--night-3) var(--night-0); }
 .cta { border-top: 0; padding-top: 0; }
 .cta__box {
   position: relative; overflow: hidden; text-align: center;
-  padding: clamp(56px, 8vw, 104px) var(--gutter);
+  padding: clamp(40px, 5vw, 72px) var(--gutter);
   border-radius: 36px; border: 1px solid var(--line-strong);
   background: radial-gradient(120% 90% at 50% 0%, rgba(124, 92, 255, 0.32), transparent 60%), var(--night-2);
   display: grid; justify-items: center; gap: 20px;
@@ -450,7 +450,7 @@ html { scrollbar-color: var(--night-3) var(--night-0); }
 @keyframes dv-turn { to { transform: rotate(360deg); } }
 .device.is-paused, .device.is-paused * { animation-play-state: paused !important; }
 @media (max-width: 960px) { .device-wrap { width: min(100%, 420px); } }
-@media (max-width: 480px) { .device { --s: 0.68; } }
+@media (max-width: 480px) { .device { --s: 0.68; aspect-ratio: 1 / 0.78; } .device .laptop { top: 66%; } }
 
 /* Serviços: etiquetas */
 .services a { color: var(--lavender); }
@@ -475,7 +475,7 @@ html { scrollbar-color: var(--night-3) var(--night-0); }
 /* Projetos */
 .apps__group { display: flex; align-items: center; gap: 12px; font-size: 1.25rem; font-weight: 600; margin: 8px 0 20px; }
 .apps__group span { font: 600 0.8125rem/1 var(--font-body); padding: 5px 10px; border-radius: 999px; background: rgba(124, 92, 255, 0.14); color: var(--lavender); }
-.apps + .apps__group { margin-top: clamp(40px, 5vw, 64px); }
+.apps + .apps__group { margin-top: clamp(32px, 4vw, 48px); }
 .apps { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
 .app {
   display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 24px;
@@ -505,7 +505,7 @@ html { scrollbar-color: var(--night-3) var(--night-0); }
 .flow li.reveal:nth-child(4) { transition-delay: 0.18s; }
 
 /* Música: abertura da seção */
-.music { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(32px, 5vw, 80px); align-items: center; margin-bottom: clamp(40px, 5vw, 64px); }
+.music { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(32px, 5vw, 80px); align-items: center; margin-bottom: clamp(32px, 4vw, 48px); }
 .music__copy p:not(.eyebrow) { margin-top: 20px; color: var(--text-2); font-size: 1.125rem; max-width: 32em; }
 
 @media (max-width: 960px) {
@@ -542,13 +542,13 @@ html { scrollbar-color: var(--night-3) var(--night-0); }
 .music .story__inner h2 { font-size: clamp(2.25rem, 4.6vw, 4rem); max-width: 12em; }
 .music .story__body { grid-template-columns: 1fr; max-width: 34rem; font-size: clamp(1.0625rem, 1.3vw, 1.1875rem); }
 .music__copy .story__body p { margin-top: 0; max-width: none; font-size: inherit; }
-.music__copy p.story__mark { margin-top: 0; font-size: clamp(5rem, 9vw, 8rem); color: var(--lavender); max-width: none; }
+.music__copy p.story__mark { margin-top: 0; margin-bottom: -26px; font-size: clamp(4rem, 7vw, 6rem); color: var(--lavender); max-width: none; }
 
 /* ---- Projetos: lista compacta dos que estão a caminho ---- */
 .soon { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0 32px; border-top: 1px solid var(--line); }
 .soon li { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); color: var(--text-2); font-size: 0.9375rem; }
 .soon i { flex: none; width: 10px; height: 10px; border-radius: 3px; background: var(--a1); box-shadow: 0 0 12px color-mix(in srgb, var(--a1) 60%, transparent); }
-.launch { margin-top: clamp(64px, 8vw, 112px); }
+.launch { margin-top: clamp(48px, 5vw, 72px); }
 .launch__head h3 { font-size: clamp(1.75rem, 3.2vw, 2.5rem); }
 
 /* ---- CTA: aviso no ponto de contato ---- */
@@ -567,11 +567,11 @@ html { scrollbar-color: var(--night-3) var(--night-0); }
 
 /* ---- Páginas legais ---- */
 .nav__back { margin-left: auto; }
-.legal { padding-block: clamp(48px, 7vw, 96px); }
+.legal { padding-block: clamp(40px, 5vw, 72px); }
 .legal__inner { max-width: calc(46rem + 2 * var(--gutter)); }
 .legal h1 { font-weight: 800; font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1.06; letter-spacing: -0.03em; }
 .legal__meta { margin-top: 12px; color: var(--text-3); font-size: 0.9375rem; }
-.legal h2 { margin-top: 48px; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
+.legal h2 { margin-top: 40px; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
 .legal h3 { margin-top: 28px; font-size: 1.125rem; font-weight: 600; }
 .legal p, .legal li { color: var(--text-2); }
 .legal p { margin-top: 14px; }
