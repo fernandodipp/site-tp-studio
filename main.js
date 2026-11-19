@@ -50,3 +50,36 @@ if ("IntersectionObserver" in window && !reduce) {
 } else {
   items.forEach((el) => el.classList.add("is-in"));
 }
+
+// Paralaxe: cada elemento com data-parallax="velocidade" se desloca em relação ao
+// próprio bloco. Usa a propriedade `translate`, que não briga com os `transform`
+// das animações de entrada e revelação. Desligado com movimento reduzido.
+const layers = [...document.querySelectorAll("[data-parallax]")].map((el) => ({
+  el,
+  speed: parseFloat(el.dataset.parallax) || 0,
+  // Referência do deslocamento: um ancestral indicado em data-parallax-ref ou a seção.
+  ref: (el.dataset.parallaxRef && el.closest(el.dataset.parallaxRef)) || el.closest("section") || el.parentElement,
+}));
+if (layers.length && !reduce) {
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const vh = window.innerHeight;
+    layers.forEach((l) => {
+      const r = l.ref.getBoundingClientRect();
+      if (r.bottom < -200 || r.top > vh + 200) return;
+      const y = -(r.top + r.height / 2 - vh / 2) * l.speed;
+      l.el.style.translate = `0 ${y.toFixed(1)}px`;
+    });
+  };
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  update();
+}
+
+// Notebook 3D do hero: pausa as animações quando sai da tela, para poupar bateria.
+const device = document.querySelector(".device");
+if (device && "IntersectionObserver" in window) {
+  new IntersectionObserver(([e]) => device.classList.toggle("is-paused", !e.isIntersecting)).observe(device);
+}
