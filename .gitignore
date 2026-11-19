@@ -2,3 +2,8 @@
 .impeccable/hook.cache.json
 .impeccable/config.local.json
 .DS_Store
+
+# Pacote recebido do CEO (já incorporado)
+site-tp-studio-para-fernando/
+site-tp-studio-para-fernando.zip
+*:Zone.Identifier
