@@ -7,6 +7,128 @@ if (WHATSAPP) {
   document.querySelectorAll("[data-whatsapp]").forEach((a) => { a.href = href; });
 }
 
+// Formulário rápido antes do WhatsApp: perguntas de toque que montam a mensagem.
+// Tudo é opcional; nada é gravado, só vira o texto do link wa.me.
+const ZAP = {
+  titulo: "Conte rapidinho o que você precisa",
+  subtitulo: "Leva 20 segundos e é tudo opcional. A mensagem já chega pronta no nosso WhatsApp.",
+  pedirNome: true,
+  perguntas: [
+    { id: "servico", rotulo: "O que você quer tirar do papel?", msg: "Interesse",
+      opcoes: ["Sistema para órgão público", "Segurança digital e LGPD", "Sistema sob medida",
+        "App desktop ou web", "Automação de rotinas", "Tecnologia para igreja, estúdio ou evento",
+        "Um dos apps da TP Studio"], outro: true },
+    { id: "perfil", rotulo: "Para quem é?", msg: "Para",
+      opcoes: ["Órgão público ou conselho", "Empresa", "Igreja ou ministério", "Estúdio ou músico", "Uso pessoal"], outro: true },
+    { id: "momento", rotulo: "Quando quer começar?", msg: "Prazo",
+      opcoes: ["O quanto antes", "Nos próximos meses", "Ainda estou pesquisando"] },
+  ],
+};
+
+if (WHATSAPP) {
+  const el = (tag, attrs = {}, ...filhos) => {
+    const n = document.createElement(tag);
+    for (const k in attrs) {
+      if (k === "class") n.className = attrs[k];
+      else if (k === "text") n.textContent = attrs[k];
+      else n.setAttribute(k, attrs[k]);
+    }
+    filhos.forEach((f) => n.append(f));
+    return n;
+  };
+  const resp = {};
+  let nome = "";
+  const link = (t) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(t)}`;
+  const bubble = el("div", { class: "zap-bubble" });
+  const enviar = el("a", { class: "btn btn--primary btn--lg zap-enviar", target: "_blank", rel: "noopener" });
+  enviar.innerHTML = '<svg aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Enviar pelo WhatsApp</span>';
+  const direto = el("a", { class: "zap-direto", target: "_blank", rel: "noopener", href: link(WHATSAPP_MSG), text: "Prefiro chamar direto, sem preencher" });
+
+  const montar = () => {
+    const det = ZAP.perguntas.filter((q) => resp[q.id]).map((q) => `${q.msg}: ${resp[q.id]}`);
+    let linhas = [WHATSAPP_MSG];
+    if (det.length) linhas = linhas.concat([""], det);
+    if (nome) linhas = linhas.concat(["", `Meu nome é ${nome}.`]);
+    return linhas.join("\n");
+  };
+  const atualizar = () => { const t = montar(); bubble.textContent = t; enviar.href = link(t); };
+
+  const campoEscolha = (q) => {
+    const grupo = el("div", { class: "zap-chips" });
+    const outro = el("input", { type: "text", maxlength: "40", placeholder: "Qual?", "aria-label": `${q.rotulo} Outro`, class: "zap-input zap-oculto" });
+    q.opcoes.concat(q.outro ? ["Outro"] : []).forEach((o) => {
+      const r = el("input", { type: "radio", name: `zap-${q.id}`, value: o });
+      r.addEventListener("change", () => {
+        const ehOutro = o === "Outro";
+        outro.classList.toggle("zap-oculto", !ehOutro);
+        resp[q.id] = ehOutro ? (outro.value.trim() || "outro") : o;
+        if (ehOutro) outro.focus();
+        atualizar();
+      });
+      grupo.append(el("label", { class: "zap-chip" }, r, el("span", { text: o })));
+    });
+    outro.addEventListener("input", () => { resp[q.id] = outro.value.trim() || "outro"; atualizar(); });
+    return [grupo, outro];
+  };
+
+  const form = el("form", { autocomplete: "off" });
+  form.addEventListener("submit", (e) => e.preventDefault());
+  ZAP.perguntas.forEach((q) => form.append(el("fieldset", {}, el("legend", { text: q.rotulo }), ...campoEscolha(q))));
+  if (ZAP.pedirNome) {
+    const n = el("input", { type: "text", maxlength: "40", placeholder: "Como podemos te chamar?", "aria-label": "Seu nome", class: "zap-input" });
+    n.addEventListener("input", () => { nome = n.value.trim(); atualizar(); });
+    form.append(el("fieldset", {}, el("legend", { text: "Seu nome (opcional)" }), n));
+  }
+  form.append(
+    el("div", { class: "zap-previa", "aria-live": "polite" }, el("span", { text: "Mensagem que será enviada" }), bubble),
+    enviar,
+    direto,
+  );
+
+  const fechar = el("button", { type: "button", class: "zap-x", "aria-label": "Fechar", text: "×" });
+  const painel = el("div", { class: "zap-painel", role: "dialog", "aria-modal": "true", "aria-labelledby": "zap-titulo", "aria-hidden": "true" },
+    el("div", { class: "zap-topo" }, el("h2", { id: "zap-titulo", text: ZAP.titulo }), fechar),
+    el("p", { class: "zap-sub", text: ZAP.subtitulo }),
+    form);
+  painel.inert = true;
+  const fundo = el("div", { class: "zap-fundo" });
+  document.body.append(fundo, painel);
+
+  let ultimoFoco = null;
+  const abrir = (e) => {
+    e.preventDefault();
+    ultimoFoco = document.activeElement;
+    painel.inert = false;
+    painel.classList.add("aberto"); fundo.classList.add("aberto");
+    painel.setAttribute("aria-hidden", "false");
+    document.documentElement.classList.add("zap-travado");
+    fechar.focus();
+  };
+  const fecharPainel = () => {
+    painel.classList.remove("aberto"); fundo.classList.remove("aberto");
+    painel.setAttribute("aria-hidden", "true");
+    painel.inert = true;
+    document.documentElement.classList.remove("zap-travado");
+    if (ultimoFoco) ultimoFoco.focus();
+  };
+  // Os botões de chamada abrem o painel; sem JavaScript, o link wa.me continua valendo.
+  document.querySelectorAll("[data-whatsapp]").forEach((b) => b.addEventListener("click", abrir));
+  fechar.addEventListener("click", fecharPainel);
+  fundo.addEventListener("click", fecharPainel);
+  document.addEventListener("keydown", (e) => {
+    if (!painel.classList.contains("aberto")) return;
+    if (e.key === "Escape") fecharPainel();
+    if (e.key === "Tab") {
+      const foc = [...painel.querySelectorAll("button, a[href], input:not(.zap-oculto)")].filter((x) => !x.disabled);
+      const [pri, ult] = [foc[0], foc[foc.length - 1]];
+      if (e.shiftKey && document.activeElement === pri) { e.preventDefault(); ult.focus(); }
+      else if (!e.shiftKey && document.activeElement === ult) { e.preventDefault(); pri.focus(); }
+    }
+  });
+  [enviar, direto].forEach((a) => a.addEventListener("click", () => setTimeout(fecharPainel, 300)));
+  atualizar();
+}
+
 const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 // Ordem do culto: o momento ativo avança e o pad acompanha o tom.
