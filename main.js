@@ -10,18 +10,18 @@ if (WHATSAPP) {
 // Formulário rápido antes do WhatsApp: perguntas de toque que montam a mensagem.
 // Tudo é opcional; nada é gravado, só vira o texto do link wa.me.
 const ZAP = {
-  titulo: "Conte rapidinho o que você precisa",
-  subtitulo: "Leva 20 segundos e é tudo opcional. A mensagem já chega pronta no nosso WhatsApp.",
+  titulo: "Antes de abrir o WhatsApp",
+  subtitulo: "Três perguntas opcionais, cerca de 20 segundos. A mensagem chega pronta à nossa equipe.",
   pedirNome: true,
   perguntas: [
-    { id: "servico", rotulo: "O que você quer tirar do papel?", msg: "Interesse",
+    { id: "servico", rotulo: "Qual é a sua necessidade?", msg: "Interesse",
       opcoes: ["Sistema para órgão público", "Segurança digital e LGPD", "Sistema sob medida",
         "App desktop ou web", "Automação de rotinas", "Tecnologia para igreja, estúdio ou evento",
-        "Um dos apps da TP Studio"], outro: true },
-    { id: "perfil", rotulo: "Para quem é?", msg: "Para",
+        "Um dos aplicativos da TP Studio Labs"], outro: true },
+    { id: "perfil", rotulo: "Para qual tipo de organização?", msg: "Para",
       opcoes: ["Órgão público ou conselho", "Empresa", "Igreja ou ministério", "Estúdio ou músico", "Uso pessoal"], outro: true },
-    { id: "momento", rotulo: "Quando quer começar?", msg: "Prazo",
-      opcoes: ["O quanto antes", "Nos próximos meses", "Ainda estou pesquisando"] },
+    { id: "momento", rotulo: "Qual é o prazo previsto?", msg: "Prazo",
+      opcoes: ["Imediato", "Nos próximos meses", "Em fase de pesquisa"] },
   ],
 };
 
@@ -75,7 +75,7 @@ if (WHATSAPP) {
   form.addEventListener("submit", (e) => e.preventDefault());
   ZAP.perguntas.forEach((q) => form.append(el("fieldset", {}, el("legend", { text: q.rotulo }), ...campoEscolha(q))));
   if (ZAP.pedirNome) {
-    const n = el("input", { type: "text", maxlength: "40", placeholder: "Como podemos te chamar?", "aria-label": "Seu nome", class: "zap-input" });
+    const n = el("input", { type: "text", maxlength: "40", placeholder: "Nome e, se quiser, organização", "aria-label": "Seu nome", class: "zap-input" });
     n.addEventListener("input", () => { nome = n.value.trim(); atualizar(); });
     form.append(el("fieldset", {}, el("legend", { text: "Seu nome (opcional)" }), n));
   }
@@ -204,4 +204,57 @@ if (layers.length && !reduce) {
 const device = document.querySelector(".device");
 if (device && "IntersectionObserver" in window) {
   new IntersectionObserver(([e]) => device.classList.toggle("is-paused", !e.isIntersecting)).observe(device);
+}
+
+// Tela do notebook: o código é digitado no editor, os testes rodam no terminal
+// e o ciclo recomeça. Sem JS ou com movimento reduzido, fica o código completo (HTML).
+const codeEl = document.querySelector("[data-code]");
+const termEl = document.querySelector("[data-term]");
+if (codeEl && termEl && !reduce) {
+  const CODE = [
+    [["c", "// checklist de cada entrega"]],
+    [["k", "entrega"], ["", "."], ["f", "verificar"], ["", "({"]],
+    [["", "  entradas: "], ["s", "'validadas'"], ["", ","]],
+    [["", "  segredos: "], ["s", "'fora do código'"], ["", ","]],
+    [["", "  acessos:  "], ["s", "'mínimo necessário'"], ["", ","]],
+    [["", "  dados:    "], ["s", "'LGPD'"], ["", ","]],
+    [["", "  testes:   "], ["s", "'passando'"], ["", ","]],
+    [["", "  versao:   "], ["s", "'numerada e reversível'"], ["", ","]],
+    [["", "})"]],
+  ];
+  const TERM = [["$ npm test", ""], ["✓ testes passando", "ok"], ["$ npm run verificar", ""], ["✓ verificações ok", "ok"], ["▶ pronto para publicar", "run"]];
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  // Espera enquanto o notebook estiver fora da tela.
+  const tick = async (ms) => { await sleep(ms); while (device && device.classList.contains("is-paused")) await sleep(300); };
+  const caret = document.createElement("span");
+  caret.className = "caret";
+
+  (async function loop() {
+    for (;;) {
+      codeEl.textContent = ""; termEl.textContent = "";
+      for (const tokens of CODE) {
+        const ln = document.createElement("span");
+        ln.className = "ln";
+        codeEl.append(ln);
+        ln.append(caret);
+        for (const [cls, text] of tokens) {
+          const sp = document.createElement("span");
+          if (cls) sp.className = cls;
+          ln.insertBefore(sp, caret);
+          for (const ch of text) { sp.textContent += ch; await tick(ch === " " ? 18 : 38); }
+        }
+        if (!tokens.length) ln.insertBefore(document.createTextNode(" "), caret);
+        await tick(220);
+      }
+      await tick(500);
+      for (const [text, cls] of TERM) {
+        const p = document.createElement("p");
+        if (cls) p.className = cls;
+        p.textContent = text;
+        termEl.append(p);
+        await tick(cls ? 450 : 750);
+      }
+      await tick(4200);
+    }
+  })();
 }
