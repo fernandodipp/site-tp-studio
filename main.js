@@ -140,8 +140,31 @@ const LUZ = ["Plena", "Quente", "Baixa", "Média", "Baixa"];
 const track = [...document.querySelectorAll(".sync__track li")];
 const sync = (k) => document.querySelector(`[data-sync="${k}"]`);
 function syncAltar(i, nome, key) {
-  track.forEach((t, n) => { t.classList.toggle("is-active", n === i); t.classList.toggle("is-done", n < i); });
-  const set = (k, v) => { const el = sync(k); if (el) el.textContent = v; };
+  track.forEach((t, n) => {
+    t.classList.toggle("is-done", n < i);
+    t.classList.remove("is-active");
+    // Força o recálculo para o preenchimento recomeçar do zero a cada momento.
+    if (n === i) { void t.offsetWidth; t.classList.add("is-active"); }
+  });
+  // Cada valor que muda sai subindo e o novo entra de baixo (cerca de 0,4 s),
+  // com um pequeno escalonamento entre os campos. Com movimento reduzido, troca direto.
+  let ordem = 0;
+  const set = (k, v) => {
+    const el = sync(k);
+    if (!el || el.textContent === v) return;
+    if (reduce || !el.animate) { el.textContent = v; return; }
+    const atraso = 45 * ordem++;
+    el.getAnimations().forEach((a) => a.cancel());
+    el.animate([{ opacity: 1, transform: "none" }, { opacity: 0, transform: "translateY(-0.35em)" }],
+      { duration: 150, delay: atraso, easing: "cubic-bezier(0.4, 0, 1, 1)", fill: "forwards" })
+      .finished.then(() => {
+        el.textContent = v;
+        el.animate([{ opacity: 0, transform: "translateY(0.35em)" }, { opacity: 1, transform: "none" }],
+          { duration: 260, easing: "cubic-bezier(0.16, 1, 0.3, 1)" });
+        el.getAnimations().forEach((a) => { if (a.effect && a.effect.getComputedTiming().fill === "forwards") a.cancel(); });
+      })
+      .catch(() => { el.textContent = v; });
+  };
   set("momento", nome); set("tom", key); set("pad", key); set("luz", LUZ[i] || "");
 }
 function setActive(i) {
@@ -156,7 +179,11 @@ function setActive(i) {
 if (rows.length) {
   setActive(0);
   if (!reduce) {
-    setInterval(() => { current = (current + 1) % rows.length; setActive(current); }, 2600);
+    const ETAPA = 2600;
+    const trilha = document.querySelector(".sync__track");
+    if (trilha) trilha.style.setProperty("--etapa", `${ETAPA}ms`);
+    setActive(0);
+    setInterval(() => { current = (current + 1) % rows.length; setActive(current); }, ETAPA);
   }
 }
 
