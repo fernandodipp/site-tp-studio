@@ -20,7 +20,7 @@ typography:
   display:
     fontFamily: "Poppins, system-ui, sans-serif"
     fontSize: "clamp(2.75rem, 5.8vw, 4.875rem)"
-    fontWeight: 800
+    fontWeight: 700
     lineHeight: 1.02
     letterSpacing: "-0.035em"
   headline:
@@ -40,22 +40,22 @@ typography:
     fontWeight: 600
     letterSpacing: "-0.01em"
   lead:
-    fontFamily: "Inter, system-ui, sans-serif"
+    fontFamily: "Noto Sans, Verdana, sans-serif"
     fontSize: "clamp(1.0625rem, 1.4vw, 1.25rem)"
     fontWeight: 400
     lineHeight: 1.6
   body:
-    fontFamily: "Inter, system-ui, sans-serif"
+    fontFamily: "Noto Sans, Verdana, sans-serif"
     fontSize: "1.0625rem"
     fontWeight: 400
     lineHeight: 1.6
   button:
-    fontFamily: "Inter, system-ui, sans-serif"
+    fontFamily: "Noto Sans, Verdana, sans-serif"
     fontSize: "1rem"
     fontWeight: 600
     lineHeight: 1
   label:
-    fontFamily: "Inter, system-ui, sans-serif"
+    fontFamily: "Noto Sans, Verdana, sans-serif"
     fontSize: "0.75rem"
     fontWeight: 400
     letterSpacing: "0.12em"
@@ -126,10 +126,10 @@ O movimento é contido: uma entrada única do hero em sequência curta, revelaç
 **Key Characteristics:**
 - Fundo azul-noite em camadas tonais, nunca preto puro.
 - Violeta sólido só em ações; lavanda nos destaques de texto e ícones.
-- Poppins 700–800 com tracking negativo nos títulos, Inter no corpo.
+- Poppins 600–700 com tracking negativo nos títulos e botões, Noto Sans no corpo (par 7 da skill tipografia-e-cor).
 - Bordas de 1px em lavanda translúcida separando superfícies e seções.
 - Cantos grandes (16–28px) em superfícies, pílula em botões.
-- Interface de app ilustrativa como prova visual, sempre rotulada.
+- Interface de app ilustrativa como prova visual, identificada como ilustração para leitores de tela (aria-label), sem legenda visível.
 
 ## Colors
 
@@ -159,14 +159,14 @@ Noite azulada em quatro degraus, um violeta de ação e uma lavanda de destaque;
 
 ## Typography
 
-**Display Font:** Poppins (com system-ui, sans-serif), pesos 600, 700 e 800
-**Body Font:** Inter (com system-ui, sans-serif), pesos 400, 500 e 600
+**Display Font:** Poppins (com Arial, sans-serif), pesos 600 e 700, hospedada no site (latin e latin-ext)
+**Body Font:** Noto Sans (com Verdana, sans-serif), pesos 400 e 600, hospedada no site (latin e latin-ext)
 
-**Character:** Poppins pesada e fechada nos títulos, herdada dos posts da marca, dá a voz geométrica e confiante; Inter no corpo mantém a leitura neutra e técnica. O contraste é de peso e tamanho, não de estilo.
+**Character:** Poppins pesada e fechada nos títulos, herdada dos posts da marca, dá a voz geométrica e confiante; Noto Sans no corpo mantém a leitura neutra e técnica. O contraste é de peso e tamanho, não de estilo.
 
 ### Hierarchy
-- **Display** (800, clamp(2.75rem → 4.875rem), 1,02, -0,035em): título do hero e o título da história ("Nascemos entre o estúdio e o altar.", que sobe até 5,5rem). A palavra-chave pode vir em lavanda.
-- **Headline** (700, clamp(2rem → 3.25rem), 1,08, -0,03em): títulos de seção. A caixa de CTA usa a mesma família em 800, até 3,5rem.
+- **Display** (700, clamp(2.75rem → 4.875rem), 1,02, -0,035em): título do hero e o título da história ("Nascemos entre o estúdio e o altar.", que sobe até 5,5rem). A palavra-chave pode vir em lavanda.
+- **Headline** (700, clamp(2rem → 3.25rem), 1,08, -0,03em): títulos de seção. A caixa de CTA usa a mesma família em 700, até 3,5rem.
 - **Title** (700, clamp(1.5rem → 2rem), -0,02em): títulos dos tiles de cenário; o tile principal sobe até 3rem.
 - **Title pequeno** (600, 1.375rem, -0,01em): títulos da grade de serviços.
 - **Lead** (400, clamp(1.0625rem → 1.25rem), 1,6): subtítulo do hero, em text-2, máximo de 34em.
@@ -206,13 +206,13 @@ Cantos generosos e consistentes por escala: 10px em chips, passos e link de pula
 ### Buttons
 Pílulas firmes, com ícone à esquerda quando a ação leva a um canal (WhatsApp, Instagram).
 - **Shape:** pílula (999px), altura mínima de 48px, ícone de 20px com 10px de espaço.
-- **Primary:** violeta de ação com texto branco, Inter 600, sombra Tecla. Reservado à ação principal: chamar no WhatsApp.
+- **Primary:** violeta de ação com texto branco, Poppins 600, sombra Tecla. Reservado à ação principal: chamar no WhatsApp.
 - **Hover / Focus:** hover escurece para violeta profundo (só em dispositivos com hover); pressionar reduz para 0,97; foco é um anel lavanda de 2px com 3px de afastamento. Transições de 0,2s.
 - **Ghost:** fio forte, fundo branco a 2%, texto principal; no hover a borda vira lavanda e o fundo ganha lavanda a 6%. Ação secundária (Instagram).
 - **Tamanhos:** pequeno (40px, padding 16px) na navegação; grande (56px, padding 28px) na caixa de CTA.
 
 ### Chips
-- **Cifra:** blocos de acorde em lavanda sobre violeta a 10% com borda violeta a 30%, cantos de 10px, Inter 600.
+- **Cifra:** blocos de acorde em lavanda sobre violeta a 10% com borda violeta a 30%, cantos de 10px, Noto Sans 600.
 - **Passos:** rótulos neutros (branco a 5%, fio) ligados por traços de 18px em fio forte.
 - **Selo "Ao vivo":** pílula em violeta a 18% com ponto e texto em lavanda.
 
@@ -225,7 +225,7 @@ Pílulas firmes, com ícone à esquerda quando a ação leva a um canal (WhatsAp
 - **Cabeçalho do tile:** ícone de linha em lavanda (30px; 40px no tile principal) inline ao lado do título, sem moldura.
 
 ### Navigation
-Barra fixa de 68px em vidro azul-noite com fio inferior. Monograma circular de 36px com "TP Studio" em Poppins 700 e "LABS" em Inter 500 maiúsculo espaçado (0,24em) após um divisor. Âncoras em text-2, 0.9375rem, viram text no hover. Abaixo de 860px as âncoras somem e fica só o botão de WhatsApp pequeno.
+Barra fixa de 68px em vidro azul-noite com fio inferior. Monograma circular de 36px com "TP Studio" em Poppins 700 e "LABS" em Noto Sans 400 maiúsculo espaçado (0,24em) após um divisor. Âncoras em text-2, 0.9375rem, viram text no hover. Abaixo de 860px as âncoras somem e fica só o botão de WhatsApp pequeno.
 
 ### Interface ilustrada (Signature Component)
 O celular inclinado 4° (2° no celular pequeno) mostrando a ordem do culto: linhas que avançam a cada 2,6s (ativa com tinta violeta e borda violeta a 45%, concluídas em text-3), tecla de tom que fica violeta na linha ativa, e o pad com barras que pulsam. O tile "No altar" espelha o mesmo estado num trilho de cinco segmentos lavanda e numa grade de quatro valores em Poppins 600 lavanda com números tabulares. Toda interface desse tipo leva a legenda "Tela ilustrativa" ou "Ilustração".
@@ -249,4 +249,4 @@ Curva única `cubic-bezier(0.16, 1, 0.3, 1)`. Estados em 0,2s; mudanças de dado
 - **Don't** colocar ícones dentro de quadrados ou círculos coloridos (ícone em tile).
 - **Don't** pôr etiqueta em caixa-alta (kicker/eyebrow) acima de títulos de seção.
 - **Don't** usar preto puro ou cinza neutro; os neutros são azul-noite e lavanda.
-- **Don't** usar Poppins em texto corrido nem Inter em títulos.
+- **Don't** usar Poppins em texto corrido nem Noto Sans em títulos.
